@@ -1,8 +1,7 @@
 #include<iostream>
 #include<vector>
+#include<string>
 using namespace std;
-
- // const int num = 5;
 
 struct Book {
 	string title;
@@ -12,12 +11,16 @@ struct Book {
 bool fillList(Book& Booklist) {
 
 	cout << "책 제목 입력 : ";
-	cin >> Booklist.title;
+	// cin >> Booklist.title; // 띄어쓰기 불가능하다
+	getline(cin, Booklist.title); // 이런식으로도 사용가능! 띄어쓰기를 하고 싶을 때 - 한 줄 읽어오기
+								  // #include <string> 헤더 사용해야함!
 
 	if (Booklist.title == "quit") return false;
 
 	cout << "책 등급 입력 : ";
 	cin >> Booklist.grade;
+	cin.get(); // getline() 사용하면서 에러 생기니 마지막 엔터 먹기
+
 	cout << "\n";
 
 	return true;
@@ -68,16 +71,50 @@ int main() {
 	}
 
 
-	// 책 삭제하기 (삽입, 삭제 전 백업 해두기 꼭!)
+	/*
+	// 책 삭제하기 - erase (삽입, 삭제 전 백업 해두기 꼭!)
 	if (num >= 2) {
-		 Booklist.erase(Booklist.begin());
-		 Booklist.erase(Booklist.end()-1); // end는 꼭 -1 해서 사용! end()는 마지막 데이터의 '뒤'를 가르키고 있기 때문
+		 Booklist.erase(Booklist.begin()); // 처음 것 삭제하기
+		 Booklist.erase(Booklist.end()-1); // end는 -1 해서 사용! end()는 마지막 데이터의 '뒤'를 가르키고 있기 때문
 	}
 
 	cout << "\n=============Booklist===============" << endl;
 	for (auto& e : Booklist) {
 		cout << "책 제목 : " << e.title << ". 책 등급 : " << e.grade << endl;
 	}
+	*/
+
+	// 책 삭제하기 - erase (범위 지정법)
+	if (num >= 5) {
+		Booklist.erase(Booklist.begin() + 1, Booklist.end()); // 처음 것만 나오게됨
+		// 매개변수 2개는 범위! *범위 시에는 end()에 -1 안해도 ok
+	}
+
+	cout << "\n===========Booklist erase===========" << endl;
+	for (auto& e : Booklist) {
+		ShowList(e);
+	}
+
+	// 책 삽입하기 - insert
+	Booklist.insert(Booklist.begin(), old_List.begin()+1, old_List.begin()+2);
+	// old_List.begin()+1, old_List.begin()+2 => 하나의 컬럼을 뜻함 
+	// ::위치:: >   begin()+1 | 데이터 | begin()+2 | 데이터....
+	cout << "\n==========Booklist insert===========" << endl;
+	for (auto& e : Booklist) {
+		ShowList(e);
+	}
+
+
+	// 교환하기 - swqp (Booklist와 old_list 데이터 바꾸기)
+	cout << "\n*************list swap**************" << endl;
+	Booklist.swap(old_List);
+
+	cout << "\n=============Booklist===============" << endl;
+	for (auto& e : Booklist) ShowList(e);
+	
+	cout << "\n=============old_list===============" << endl;
+	for (auto& e : old_List) ShowList(e);
+
 
 	return 0;
 }
