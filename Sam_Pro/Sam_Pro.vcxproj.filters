@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="%28다음시간%29209p_Exam.cpp">
+    <ClCompile Include="231p_Exam.cpp">
       <Filter>리소스 파일\소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

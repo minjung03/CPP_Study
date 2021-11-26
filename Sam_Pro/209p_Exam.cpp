@@ -13,6 +13,7 @@ int main(void) {
 
 	for (auto e : v1) {
 		cout << "  " << e;
+
 	}
 	cout << endl;
 
