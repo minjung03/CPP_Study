@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="231p_Exam.cpp">
+    <ClCompile Include="oneFile_InOut_Exam2.cpp">
       <Filter>리소스 파일\소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
