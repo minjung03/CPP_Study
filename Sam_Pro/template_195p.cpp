@@ -29,7 +29,7 @@ int main() {
 	char str1[] = "Meister";
 	char str2[] = "Mirim";
 
-	cout << Max(str1, str2) << endl;
+	cout << Max(str1, str2) << endl; // 변하는 값 - 변수 (12번 호출)
 
 	return 0;
 }

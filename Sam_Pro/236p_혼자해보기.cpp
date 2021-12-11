@@ -4,7 +4,6 @@ using namespace std;
 
 void reverseReadFile(ifstream& fin){
 
-
 	fin.seekg(0, ios::end);
 	int length = fin.tellg();
 	cout << length << endl;
