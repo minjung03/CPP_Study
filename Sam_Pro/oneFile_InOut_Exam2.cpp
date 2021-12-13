@@ -30,7 +30,5 @@ int main() {
 	// virtual
 	// struct
 
-
-
 	return 0;
 }

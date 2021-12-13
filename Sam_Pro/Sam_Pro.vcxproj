@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Class_Vector_Exam.cpp" />
     <ClCompile Include="oneFile_InOut_Exam2.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

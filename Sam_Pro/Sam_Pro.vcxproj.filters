@@ -18,5 +18,8 @@
     <ClCompile Include="oneFile_InOut_Exam2.cpp">
       <Filter>리소스 파일\소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Class_Vector_Exam.cpp">
+      <Filter>리소스 파일\소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
