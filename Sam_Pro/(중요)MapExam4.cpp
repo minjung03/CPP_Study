@@ -17,7 +17,7 @@ ostream& operator<< (ostream& out, AAA& a) {
 	return out;
 }
 
-int main() {
+int main() { 
 
 	map<string, AAA> m;
 	AAA Aobj;
